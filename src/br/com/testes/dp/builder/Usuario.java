@@ -31,7 +31,14 @@ public class Usuario {
 		}
 		
 		public Usuario buildUsuario() {
+			validarCamposObrigatorios();
 			return this.usuario;
+		}
+
+		private void validarCamposObrigatorios() {
+			if(this.usuario.senha == null || this.usuario.senha.isEmpty()) {
+				throw new RuntimeException("Campo senha é obrigatorio");
+			}
 		}
 	}
 	
